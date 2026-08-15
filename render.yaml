@@ -14,15 +14,3 @@ services:
     startCommand: gunicorn backend:app -w 1
     healthCheckPath: /
     autoDeploy: true
-
-  - type: static
-    name: vibecode-frontend
-    repo: https://github.com/feranmiabiola1002/vibecode
-    branch: main
-    buildCommand: echo "Static site ready"
-    publishPath: ./frontend
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
-    autoDeploy: true

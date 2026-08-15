@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibecode - AI Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">⚡ Vibecode <span>AI Code Generator</span></div>
+        <span class="status" id="status">● Online</span>
+    </header>
+
+    <div class="main-grid">
+        <div class="panel">
+            <h3>📝 Describe What You Want to Build</h3>
+            <textarea id="promptInput" placeholder="e.g., 'Build a login form with dark theme'"></textarea>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Language</label>
+                    <select id="languageSelect">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="html">HTML</option>
+                        <option value="go">Go</option>
+                        <option value="rust">Rust</option>
+                        <option value="docker">Dockerfile</option>
+                        <option value="vercel">Vercel</option>
+                        <option value="render">Render</option>
+                    </select>
+                </div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <button class="btn btn-primary" id="generateBtn">⚡ Generate</button>
+                    <button class="btn btn-success" id="deployBtn">🚀 Deploy</button>
+                    <button class="btn btn-secondary" id="downloadBtn">⬇️ ZIP</button>
+                </div>
+            </div>
+            <div class="quick-prompts">
+                <span>Quick:</span>
+                <button class="btn btn-sm btn-secondary" data-prompt="Build a login form with dark theme">Login</button>
+                <button class="btn btn-sm btn-secondary" data-prompt="Build a todo list with add and delete">Todo</button>
+                <button class="btn btn-sm btn-secondary" data-prompt="Build a Flask API with CRUD">Flask API</button>
+                <button class="btn btn-sm btn-success" data-prompt="Build a full-stack app with Flask API and HTML frontend, call it myapp, deploy to Render">🚀 Deploy</button>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <h3>💻 Generated Code</h3>
+                <div>
+                    <button class="btn btn-sm btn-secondary" id="copyBtn">📋 Copy</button>
+                    <button class="btn btn-sm btn-secondary" id="clearBtn">✕ Clear</button>
+                </div>
+            </div>
+            <div class="code-container">
+                <div id="languageBadge" class="language-badge">Python</div>
+                <pre id="codeOutput"><div class="placeholder">Describe what you want and click Generate</div></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-header">
+            <h3>📖 Explanation</h3>
+            <div id="deployStatus" style="font-size:12px;color:#4a5568;"></div>
+        </div>
+        <div id="explanationOutput" class="explanation-text"><span class="placeholder">Explanation will appear here...</span></div>
+    </div>
+
+    <div class="footer">Vibecode v3.0 • AI-Powered Code Generation • Deploy to Render/Vercel/Netlify/Docker</div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+  </html>
